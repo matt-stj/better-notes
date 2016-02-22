@@ -1,6 +1,23 @@
-{{#each model as |note|}}
-<div class="note-list-item">
-  <h3>{{note.id}}</h3>
-  <p>{{note.content}}</p>
+<div class="notes">
+  <div class="row">
+    <div class="col-xs-2">
+      <div class="list-group">
+
+        {{#each model as |note|}}
+        <div class="well">
+          <div class="note-list-item">
+            <h4 class="list-group-item-heading">{{note.id}}</h4>
+            <p class="list-group-item-text">{{note.content}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <p>HIIIIII THEEREEEEE</p>
+      <!-- {{outlet}} -->
+    </div>
+
+  </div>
 </div>
-{{/each}}

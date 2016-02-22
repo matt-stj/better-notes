@@ -23,7 +23,8 @@ app.on('ready', function onReady() {
   mainWindow = new BrowserWindow({
           width: 800,
          height: 600,
-    'min-width': 400  
+    'min-width': 500,
+    'min-height': 300
   });
 
   delete mainWindow.module;

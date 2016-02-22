@@ -12,7 +12,7 @@ export default DS.Adapter.extend({
 
   createRecord(store, type, snapshot) {
     var data = this.serialize(snapshot, { includeId: true });
-    var filename = data.id
+    var filename = data.id + ".txt"
     var content = data.content
 
     return filesystem.write(filename, content)

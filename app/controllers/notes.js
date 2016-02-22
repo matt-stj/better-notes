@@ -9,11 +9,14 @@ export default Ember.Controller.extend({
     createNewNote: function(){
       let id = this.get('newNoteId');
       let content = this.get('newNoteContent');
-      
+
       this.store.createRecord('note', {
         id: id,
         content: content
-      }).save();
+      }).save().then(() => {
+        this.set('newNoteId', '');
+        this.set('newNoteContent', '');
+      });
     }
   }
 

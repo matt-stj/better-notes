@@ -15,8 +15,9 @@
         {{/each}}
       </div>
 
-    {{input type="text" placeholder="New Note Title" value=newNoteTitle}}
-    {{input type="text" placeholder="New Note Body" value=newNoteBody}}
+    {{input type="text" placeholder="New Note ID" value=newNoteId}}
+    {{input type="text" placeholder="New Note Content" value=newNoteContent}}
+    <button {{action 'createNewNote'}}>New Note</button>
 
     </div>
 

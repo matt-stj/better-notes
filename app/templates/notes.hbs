@@ -1,9 +1,21 @@
 <div class="notes">
-  {{input type="text" placeholder="New Note ID" value=newNoteId}}<br/>
-  {{input type="text" placeholder="New Note Content" value=newNoteContent}}<br />
-  <button {{action 'createNewNote'}}>New Note</button>
   <div class="row">
     <div class="col-xs-4">
+
+      {{input type="text"
+              placeholder="New Note ID"
+              class="form-control"
+              value=newNoteId}}
+
+      {{input type="text"
+              placeholder="New Note Content"
+              class="form-control"
+              value=newNoteContent}}
+
+      {{#if newNoteId}}
+        <button class="btn btn-block btn-success" {{action 'createNewNote'}}>Create</button>
+      {{/if}}
+
       <div class="list-group">
 
         {{#each model as |note|}}

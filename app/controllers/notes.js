@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
       }).save().then(data => {
         this.transitionToRoute('notes.note', data).then(() => {
           this.set('newNoteId', '');
-          this.set('newNoteContent', '');
+          this.set('newNoteContent', '');;  
         });
       });
     }

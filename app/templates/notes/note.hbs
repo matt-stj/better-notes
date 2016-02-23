@@ -1,5 +1,9 @@
 <h3>{{model.id}}</h3>
 
 <div class="note-body">
-  <p>{{model.content}}</p>  
+  <p>{{model.content}}</p>
 </div>
+
+{{textarea value=model.content class="form-control"}}
+
+{{#if model.hasDirtyAttributes}}<button {{action 'saveNote' on='click'}}>Save Note</button>{{/if}}

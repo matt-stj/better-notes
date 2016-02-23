@@ -1,4 +1,7 @@
 <div class="notes">
+  {{input type="text" placeholder="New Note ID" value=newNoteId}}<br/>
+  {{input type="text" placeholder="New Note Content" value=newNoteContent}}<br />
+  <button {{action 'createNewNote'}}>New Note</button>
   <div class="row">
     <div class="col-xs-4">
       <div class="list-group">
@@ -15,9 +18,6 @@
         {{/each}}
       </div>
 
-    {{input type="text" placeholder="New Note ID" value=newNoteId}}
-    {{input type="text" placeholder="New Note Content" value=newNoteContent}}
-    <button {{action 'createNewNote'}}>New Note</button>
 
     </div>
 

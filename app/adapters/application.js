@@ -11,12 +11,17 @@ export default DS.Adapter.extend({
   },
 
   createRecord(store, type, snapshot) {
-    var data = this.serialize(snapshot, { includeId: true });
-    var filename = data.id + ".txt"
-    var content = data.content
+    let data = this.serialize(snapshot, { includeId: true });
+    let filename = data.id + ".txt"
+    let content = data.content
 
     return filesystem.write(filename, content)
        .then(file => console.log(file));
+  },
+
+  updateRecord(store, type, snapshot) {
+    let data = this.serialize(snapshot, { includeId: true });
+    return filesystem.write(data.id, data.content);
   }
 
 });

@@ -1,6 +1,41 @@
-{{#each model as |note|}}
-<div class="note-list-item">
-  <h3>{{note.id}}</h3>
-  <p>{{note.content}}</p>
+<div class="notes">
+  <div class="row">
+    <div class="col-xs-4" id="left_panel">
+
+      {{input type="text"
+              placeholder="New Note ID"
+              class="form-control"
+              value=newNoteId}}
+
+      {{input type="text"
+              placeholder="New Note Content"
+              class="form-control"
+              value=newNoteContent}}
+
+      {{#if newNoteId}}
+        <button class="btn btn-block btn-success" {{action 'createNewNote'}}>Create</button>
+      {{/if}}
+
+      <div class="list-group">
+
+        {{#each model as |note|}}
+          <div class="note-list-item">
+            {{#link-to 'notes.note' note class="list-group-item"}}
+
+            <h4 class="list-group-item-heading">{{note.id}}</h4>
+            <p class="list-group-item-text">{{truncate-note note.content}}</p>
+            {{/link-to}}
+
+          </div>
+        {{/each}}
+      </div>
+
+
+    </div>
+
+    <div class="col-xs-8">
+      {{outlet}}
+    </div>
+
+  </div>
 </div>
-{{/each}}

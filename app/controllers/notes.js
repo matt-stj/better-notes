@@ -12,9 +12,11 @@ export default Ember.Controller.extend({
       this.store.createRecord('note', {
         id: id,
         content: content
-      }).save().then(() => {
-        this.set('newNoteId', '');
-        this.set('newNoteContent', '');
+      }).save().then(data => {
+        this.transitionToRoute('notes.note', data).then(() => {
+          this.set('newNoteId', '');
+          this.set('newNoteContent', '');
+        });
       });
     }
   }

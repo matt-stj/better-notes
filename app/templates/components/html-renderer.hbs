@@ -3,5 +3,7 @@
 </label>
 
 <div>
-  {{renderedNote}}
+  {{#if showRendered}}
+    {{ markdown-to-html markdown=note.content }}
+  {{/if}}
 </div>

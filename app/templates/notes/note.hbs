@@ -9,3 +9,6 @@
 {{#if model.hasDirtyAttributes}}
   <button class="btn btn-primary" {{action 'saveNote' on='click'}}>Save Note</button>
 {{/if}}
+
+{{note-counter note=model}}
+{{html-renderer note=model}}

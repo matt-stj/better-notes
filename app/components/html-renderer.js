@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 
   renderedNote: Ember.computed('note.content', 'showRendered', function () {
     var content = '<h4>' + this.get('note.content').toUpperCase() + '</h4>';
-    return this.get('showRendered') ? Ember.Handlebars.SafeString(content) : content;
+    return this.get('showRendered') ? content : Ember.Handlebars.SafeString(content);
   })
 
 });

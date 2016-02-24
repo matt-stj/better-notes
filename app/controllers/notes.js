@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       let content = this.get('newNoteContent');
 
       this.store.createRecord('note', {
-        id: id,
+        id: id + '.md',
         content: content
       }).save().then(data => {
         this.transitionToRoute('notes.note', data).then(() => {

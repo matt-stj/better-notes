@@ -1,6 +1,7 @@
 <div class="notes">
   <div class="row">
     <div class="col-xs-4" id="left_panel">
+      {{notes-counter notes=model}}
 
       {{input type="text"
               placeholder="New Note ID"
@@ -19,7 +20,7 @@
       <div class="list-group">
 
       {{note-list notes=model}}
-    
+
       </div>
 
 

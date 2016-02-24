@@ -19,8 +19,7 @@ export default DS.Adapter.extend({
     let filename = data.id
     let content = data.content
 
-    return filesystem.write(filename, content)
-       .then(file => console.log(file));
+    return filesystem.write(filename, content);
   },
 
   updateRecord(store, type, snapshot) {

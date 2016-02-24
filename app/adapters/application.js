@@ -10,9 +10,13 @@ export default DS.Adapter.extend({
     return filesystem.all();
   },
 
+  findRecord(modelName, id, options) {
+    return filesystem.find(options)
+  },
+
   createRecord(store, type, snapshot) {
     let data = this.serialize(snapshot, { includeId: true });
-    let filename = data.id + ".txt"
+    let filename = data.id
     let content = data.content
 
     return filesystem.write(filename, content)

@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
           });
         });
       } else {
-        alert('!!!!');
+        alert('That note title has been taken.');
       }
 
     }

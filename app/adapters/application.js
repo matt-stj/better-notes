@@ -26,6 +26,12 @@ export default DS.Adapter.extend({
   updateRecord(store, type, snapshot) {
     let data = this.serialize(snapshot, { includeId: true });
     return filesystem.write(data.id, data.content);
+  },
+
+  deleteRecord(store, type, snapshot) {
+    let data = this.serialize(snapshot, { includeId: true });
+    return filesystem.destroy(data.id)
+      .then(console.log(type.content));
   }
 
 });

@@ -2,7 +2,7 @@
 
 A note-taking app built with Ember, Electron and FileBin. BetterNotes allows a user to create/read/update/delete notes on their filesystem, as well as search your notes by title and content and convert markdown notes to HTML.
 
-![ScreenShot](/app/images/BetterNotesScreenShot.png )
+![ScreenShot](/app/images/BetterNotesScreenShot.png)
 
 Built by [Matt Stjernholm](https://github.com/matt-stj) & [Matt Rooney](https://github.com/mattrooney) for the Turing School's module 4, week 4 project.
 

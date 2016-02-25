@@ -24,8 +24,12 @@ export default Ember.Controller.extend({
       } else {
         alert('That note title has been taken.');
       }
+    },
 
+    openFile: function() {
+      this.store.adapterFor('application').changeDirectory();
     }
+
   }
 
 });

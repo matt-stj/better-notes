@@ -7,6 +7,9 @@ const FileBin          = require('file-bin');
 const app              = electron.app;
 const BrowserWindow    = electron.BrowserWindow;
 const emberAppLocation = `file://${__dirname}/dist/index.html`;
+const dialog           = electron.dialog;
+const ipc              = electron.ipcRenderer;
+
 
 let mainWindow = null;
 let filesystem = new FileBin(__dirname + '/notes', ['.txt', '.md', '.markdown']);
@@ -38,6 +41,7 @@ app.on('ready', function onReady() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
 });
 
 exports.filesystem = filesystem;

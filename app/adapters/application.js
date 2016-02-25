@@ -31,6 +31,12 @@ export default DS.Adapter.extend({
     let data = this.serialize(snapshot, { includeId: true });
     return filesystem.destroy(data.id)
       .then(console.log(type.content));
+  },
+
+  changeDirectory() {
+    debugger;
+
+    return filesystem.setBaseDirectory()
   }
 
 });

@@ -10,6 +10,15 @@ const emberAppLocation = `file://${__dirname}/dist/index.html`;
 const dialog           = electron.dialog;
 const ipc              = electron.ipcRenderer;
 
+const openDirectory = function() {
+  var files = dialog.showOpenDialog(mainWindow, {
+    properties: ['openDirectory']
+  });
+
+  if (!files) { return; }
+
+  console.log(files);
+}
 
 let mainWindow = null;
 let filesystem = new FileBin(__dirname + '/notes', ['.txt', '.md', '.markdown']);
@@ -41,6 +50,8 @@ app.on('ready', function onReady() {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  exports.openDirectory = openDirectory;
 
 });
 

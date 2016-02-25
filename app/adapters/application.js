@@ -34,7 +34,12 @@ export default DS.Adapter.extend({
   },
 
   changeDirectory() {
+    const electron = requireNode('electron');
+    const mainProcess = electron.remote.require('./electron');
+    let dirPath = mainProcess.openDirectory();
+    console.log(dirPath[0]);
     debugger;
+
 
     return filesystem.setBaseDirectory()
   }

@@ -27,7 +27,8 @@ export default Ember.Controller.extend({
     },
 
     openFile: function() {
-      this.store.adapterFor('application').changeDirectory();
+      this.store.adapterFor('application').changeDirectory()
+      // .then(this.transitionTo('notes'));
     }
 
   }

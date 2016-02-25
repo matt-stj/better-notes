@@ -17,7 +17,7 @@ const openDirectory = function() {
 
   if (!files) { return; }
 
-  console.log(files);
+  return files;
 }
 
 let mainWindow = null;

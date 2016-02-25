@@ -7,7 +7,14 @@ export default Ember.Component.extend({
   availableNotes: Ember.computed('notes', 'searchTerm', function () {
     let term = this.get('searchTerm');
     let notes = this.get('notes');
-    if (term) { return notes.filter(note => note.id.includes(term)) }
+    if (term) {
+      let lowerCaseTerm = term.toLowerCase();
+
+      return notes.filter(note => note.serialize()
+                            .content.toLowerCase().includes(lowerCaseTerm)
+                          || note.id.toLowerCase().includes(lowerCaseTerm))
+
+               }
     return notes;
   })
 

@@ -4,7 +4,7 @@
   <p>{{model.content}}</p>
 </div>
 
-{{textarea value=model.content class="form-control"}}
+{{textarea rows=10 value=model.content class="form-control" margin=5px }}
 
 {{#if model.hasDirtyAttributes}}
   <button class="btn btn-primary" {{action 'saveNote' on='click'}}>Save Note</button>

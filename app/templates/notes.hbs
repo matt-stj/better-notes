@@ -4,14 +4,14 @@
       {{notes-counter notes=model}}
 
       {{input type="text"
-              placeholder="New Note ID"
+              placeholder="New Note Title"
               class="form-control"
               value=newNoteId}}
 
-      {{input type="text"
-              placeholder="New Note Content"
-              class="form-control"
-              value=newNoteContent}}
+      {{textarea
+        placeholder="New Note Content"
+        class="form-control"
+        value=newNoteContent}}
 
       {{#if newNoteId}}
         <button class="btn btn-block btn-success" {{action 'createNewNote'}}>Create</button>
@@ -26,7 +26,7 @@
 
     </div>
 
-    <div class="col-xs-8">
+    <div class="col-xs-8" style='padding-right: 50px;' >
       {{outlet}}
     </div>
 
